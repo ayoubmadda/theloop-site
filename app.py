@@ -5,10 +5,12 @@ import os
 app = Flask(__name__)
 app.secret_key = "secret123"
 
+# ---------------- CONFIG ---------------- #
 UPLOAD_FOLDER = "static/uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-# ---------------- DATABASE ---------------- #
+# ---------------- DATABASE INIT ---------------- #
 def init_db():
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -109,11 +111,14 @@ def add_project():
     if request.method == "POST":
         title = request.form.get("title")
         description = request.form.get("description")
-        image = request.files["image"]
+        image = request.files.get("image")
 
-        filename = image.filename
-        filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-        image.save(filepath)
+        filename = ""
+
+        if image and image.filename != "":
+            filename = image.filename
+            filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+            image.save(filepath)
 
         conn = sqlite3.connect("database.db")
         cursor = conn.cursor()
@@ -134,5 +139,6 @@ def logout():
     session.clear()
     return redirect("/")
 
+# ---------------- RUN ---------------- #
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
