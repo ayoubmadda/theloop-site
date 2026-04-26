@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<div class="video-hero">
+    <video autoplay muted loop class="bg-video">
+        <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content text-center text-white">
+        <h1 class="display-1 fw-bold" data-aos="fade-up">THE LOOP</h1>
+        <p class="lead" data-aos="fade-up" data-aos-delay="200">
+            We build hype. We create impact.
+        </p>
+        <a href="/portfolio" class="btn btn-light mt-3 px-4 py-2" data-aos="zoom-in">
+            View Work
+        </a>
+    </div>
+</div>
+
+<!-- SECTION: SERVICES -->
+<div class="container py-5">
+    <h2 class="mb-5 text-center" data-aos="fade-up">What We Do</h2>
+
+    <div class="row text-center">
+        <div class="col-md-4" data-aos="fade-up">
+            <h4>🎬 Film Marketing</h4>
+            <p>Trailer launches, hype campaigns, audience engagement</p>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <h4>🚀 Viral Campaigns</h4>
+            <p>Social media domination & trend creation</p>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <h4>🎯 Brand Strategy</h4>
+            <p>Positioning brands for maximum impact</p>
+        </div>
+    </div>
+</div>
+
+<!-- SECTION: SHOWCASE -->
+<div class="container py-5">
+    <h2 class="mb-5 text-center" data-aos="fade-up">Featured Work</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-4" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4" class="img-fluid rounded">
+        </div>
+
+        <div class="col-md-6 mb-4" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1497032205916-ac775f0649ae" class="img-fluid rounded">
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="text-center py-5" data-aos="fade-up">
+    <h2>Let’s Build Something Big</h2>
+    <a href="/contact" class="btn btn-outline-light mt-3">Contact Us</a>
+</div>
+
+{% endblock %}

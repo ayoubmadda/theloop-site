@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container py-5">
+<h1 class="mb-5 text-center">Our Work</h1>
+
+<div class="row">
+{% for project in projects %}
+    <div class="col-md-4 mb-4">
+        <div class="portfolio-card">
+            <img src="{{ url_for('static', filename='uploads/' + project[3]) }}" class="img-fluid">
+
+            <div class="overlay-card">
+                <h5>{{ project[1] }}</h5>
+                <p>{{ project[2] }}</p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+</div>
+
+{% endblock %}

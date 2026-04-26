@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Project</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    <input class="form-control mb-2" name="title" placeholder="Title">
+    <textarea class="form-control mb-2" name="description"></textarea>
+    <input class="form-control mb-2" type="file" name="image">
+    <button class="btn btn-dark">Upload</button>
+</form>
+{% endblock %}
